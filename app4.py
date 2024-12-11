@@ -19,8 +19,7 @@ st.header("Before the historical crises")
 
 # Description under the title
 st.markdown("""
-This program helps calculate the return of a portfolio (or a single asset) 
-purchased just before the major economic crises of the last 20 years.
+This program is designed to analyze and showcase the performance of a portfolio (or a single asset) as if it were purchased shortly before the most significant economic crises of the past 20 years. By simulating investment returns during turbulent market periods, it offers valuable insights into the resilience and recovery of various assets or portfolios. Whether you're looking to understand how a portfolio might have fared in challenging economic conditions or aiming to assess long-term investment strategies, this tool provides a comprehensive analysis to help inform your financial decisions.
 """)
 
 # Section to choose asset allocation
