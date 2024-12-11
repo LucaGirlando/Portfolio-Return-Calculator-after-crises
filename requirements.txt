@@ -3,6 +3,5 @@ pandas
 numpy
 yfinance
 datetime
-sys
 matplotlib
 plotly
