@@ -218,12 +218,29 @@ if specific_start_date:
        for asset in returns_data
     )
 
+    # Calculate annualized return
+    num_years = datetime.today().year - start_year
+    annualized_return = (1 + portfolio_return) ** (1 / num_years) - 1
+
+    # Calculate future portfolio values for given investments
+    investment_10k = 10000 * (1 + portfolio_return)
+    investment_100k = 100000 * (1 + portfolio_return)
+
     # Highlight the result in a visually appealing way
     st.markdown(f"""
-       <div style="font-size: 24px; font-weight: bold; text-align: center; color: #FF5722;">
-           The total return of your portfolio based on the chosen time horizon is: 
-       <span style="font-size: 32px; color: #4CAF50;">{portfolio_return * 100:.2f}%</span>
-       </div>
+    <div style="font-size: 24px; font-weight: bold; text-align: center; color: #FF5722;">
+        The total return of your portfolio based on the chosen time horizon is: 
+        <span style="font-size: 32px; color: #4CAF50;">{portfolio_return * 100:.2f}%</span>
+    </div>
+    <div style="font-size: 20px; text-align: center; color: #333333; margin-top: 20px;">
+        The annualized return is: <span style="font-size: 28px; color: #4CAF50;">{annualized_return * 100:.2f}%</span>.
+        <br><br>
+        If you had invested <strong>$10,000</strong>, your portfolio would now be worth: 
+        <span style="font-size: 28px; color: #4CAF50;">${investment_10k:,.2f}</span>.
+        <br>
+        If you had invested <strong>$100,000</strong>, your portfolio would now be worth: 
+        <span style="font-size: 28px; color: #4CAF50;">${investment_100k:,.2f}</span>.
+    </div>
     """, unsafe_allow_html=True)
 
     # Create the table of individual asset returns (sorted)
