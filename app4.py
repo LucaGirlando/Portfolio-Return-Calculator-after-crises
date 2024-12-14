@@ -232,7 +232,7 @@ if specific_start_date:
         The total return of your portfolio based on the chosen time horizon is: 
         <span style="font-size: 32px; color: #4CAF50;">{portfolio_return * 100:.2f}%</span>
     </div>
-    <div style="font-size: 20px; text-align: center; color: #333333; margin-top: 20px;">
+    <div style="font-size: 20px; text-align: center; color: white; margin-top: 20px;">
         The annualized return is: <span style="font-size: 28px; color: #4CAF50;">{annualized_return * 100:.2f}%</span>.
         <br><br>
         If you had invested <strong>$10,000</strong>, your portfolio would now be worth: 
