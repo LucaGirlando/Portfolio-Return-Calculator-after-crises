@@ -183,7 +183,7 @@ def get_average_annual_return(ticker, start_date):
         if data.empty:
             st.warning(f"No data available for {ticker}.")
             return None  # Return None if data is unavailable
-        data = data["Adj Close"].dropna()
+        data = data["Close"].dropna()
         returns = data.pct_change().dropna()
         avg_return = (1 + returns.mean()) ** 12 - 1  # Annualized return
         return avg_return.item() if hasattr(avg_return, 'item') else avg_return
