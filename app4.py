@@ -270,7 +270,7 @@ for asset, (etf_ticker, index_ticker) in assets.items():
 
         try:
             # Fetch historical data and calculate cumulative returns
-            data = yf.download(ticker, start=start_date, interval="1mo")["Adj Close"]
+            data = yf.download(ticker, start=start_date, interval="1mo")["Close"]
             data = data.pct_change().cumsum()  # Calculate cumulative percentage returns
             plot_data[asset] = data  # Add to the plot DataFrame
         except Exception as e:
